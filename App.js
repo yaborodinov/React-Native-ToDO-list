@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Navbar } from './src/Navbar';
 import { AddTodo } from './src/AddTodo';
 import { useState } from 'react';
+import { Todo } from './src/Todo';
 
 export default function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]);
+  console.log(todos);
 
   const addTodo = (title) => {
 
@@ -24,7 +25,7 @@ export default function App() {
       <View style={styles.container}>
         <AddTodo onSubmit={addTodo}/>
         <View>
-          {todos.map((todo) => <Text key={todo.id}>{todo.title}</Text>)}
+          {todos.map((todo) => <Todo key={todo.id} text={todo.title}/>)}
         </View>
       </View>
     </View>
