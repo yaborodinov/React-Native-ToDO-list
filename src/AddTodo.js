@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Pressable, Text } from 'react-native';
+import { View, StyleSheet, TextInput, Pressable, Text, Alert } from 'react-native';
 
 export const AddTodo = ({onSubmit}) => {
 
     const [value, setValue] = useState('')
 
     const onHandler = () => {
-        onSubmit(value.toString().trim())
-        setValue('')
+        if(value.trim()){
+            onSubmit(value.toString().trim())
+            setValue('')
+        } else {
+            Alert.alert("Can't be empty!")
+        }
     }
     return (
         <View style={styles.block}>
