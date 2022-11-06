@@ -3,14 +3,14 @@ import { View, StyleSheet, TextInput, Pressable, Text, Alert } from 'react-nativ
 
 export const AddTodo = ({onSubmit}) => {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
 
     const onHandler = () => {
         if(value.trim()){
-            onSubmit(value.toString().trim())
-            setValue('')
+            onSubmit(value.toString().trim());
+            setValue('');
         } else {
-            Alert.alert("Can't be empty!")
+            Alert.alert("Can't be empty!");
         }
     }
     return (
