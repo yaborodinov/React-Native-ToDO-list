@@ -15,7 +15,7 @@ export const AddTodo = ({onSubmit}) => {
     }
     return (
         <View style={styles.block}>
-            <TextInput style={styles.input} onChangeText={text => setValue(text)} value={value} placeholder='Enter Todo...'/>
+            <TextInput style={styles.input} onChangeText={text => setValue(text)} value={value} placeholder='Enter Todo...' autoCorrect={false} autoCapitalize="none"/>
             <Pressable style={styles.button} onPress={onHandler}>
                 <Text style={styles.text}>ADD</Text>
             </Pressable>
