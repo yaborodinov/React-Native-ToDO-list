@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { Navbar } from './src/Navbar';
 import { AddTodo } from './src/AddTodo';
 import { useState } from 'react';
@@ -24,9 +24,9 @@ export default function App() {
       <Navbar title={'ToDo App'}/>
       <View style={styles.container}>
         <AddTodo onSubmit={addTodo}/>
-        <View>
+        <ScrollView>
           {todos.map((todo) => <Todo key={todo.id} text={todo.title}/>)}
-        </View>
+        </ScrollView>
       </View>
     </View>
   );
